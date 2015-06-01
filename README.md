@@ -37,6 +37,7 @@ Meeting.delete({"username":"sss","password":"password"},function(err, user){
 
 ## 版本历史
 
+- v1.0.3 add updateById
 - v1.0.2 add deleteById
 - v1.0.0 初始化版本
 
