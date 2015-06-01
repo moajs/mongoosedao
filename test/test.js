@@ -1,15 +1,15 @@
 require('../db');
 
 
-Metting = require('./Metting');
+Meeting = require('./Meeting');
  
 
-Metting.create({"username":"sss","password":"password"},function(err, user){
+Meeting.create({"username":"sss","password":"password"},function(err, user){
   console.log(user);
 });
 
 
 
-Metting.delete({"username":"sss","password":"password"},function(err, user){
+Meeting.delete({"username":"sss","password":"password"},function(err, user){
   console.log(user);
 });

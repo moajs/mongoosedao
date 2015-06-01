@@ -7,8 +7,15 @@
     "start":"npm publish .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/i5ting/mongoosedao.git"
+  },
+  "keywords": [
+    "restful-router", "restful", "urlrouter", "router", "mapping", "route"
+  ],
+  "author": "i5ting <shiren1118@126.com>",
+  "license": "MIT",
   "devDependencies": {
     "chai": "^2.3.0",
     "mocha": "^2.2.5",

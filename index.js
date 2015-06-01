@@ -1,11 +1,12 @@
-function CommonDao (Model){
+
+function MongooseDao (Model){
     /*if(typeof Model === 'undefined' || Model == null)
         throw new Error('Model can not be null.');
 */
     this.model = Model;
 }
 
-CommonDao.prototype.create = function (doc,callback){
+MongooseDao.prototype.create = function (doc,callback){
     this.model.create(doc, function (error) {
         if(error) return callback(error);
  
@@ -13,7 +14,7 @@ CommonDao.prototype.create = function (doc,callback){
     });
 };
  
-CommonDao.prototype.getById = function (id, callback) {
+MongooseDao.prototype.getById = function (id, callback) {
     this.model.findOne({_id:id}, function(error, model){
         if(error) return callback(error,null);
  
@@ -21,7 +22,7 @@ CommonDao.prototype.getById = function (id, callback) {
     });
 };
  
-CommonDao.prototype.countByQuery = function (query, callback) {
+MongooseDao.prototype.countByQuery = function (query, callback) {
     this.model.count(query, function(error, model){
         if(error) return callback(error,null);
  
@@ -29,7 +30,7 @@ CommonDao.prototype.countByQuery = function (query, callback) {
     });
 };
 
-CommonDao.prototype.getByQuery = function (query,fileds,opt,callback) {
+MongooseDao.prototype.getByQuery = function (query,fileds,opt,callback) {
     this.model.find(query, fileds, opt, function(error,model){
         if(error) return callback(error,null);
  
@@ -38,7 +39,7 @@ CommonDao.prototype.getByQuery = function (query,fileds,opt,callback) {
 };
  
 
-CommonDao.prototype.getAll = function (callback) {
+MongooseDao.prototype.getAll = function (callback) {
     this.model.find({}, function(error,model){
         if(error) return callback(error,null);
  
@@ -46,12 +47,12 @@ CommonDao.prototype.getAll = function (callback) {
     });
 };
 /*
-CommonDao.prototype.getAllModelByOption = function (opt, callback) {
-    CommonDao.getModelByQuery({},{},opt, callback);
+MongooseDao.prototype.getAllModelByOption = function (opt, callback) {
+    MongooseDao.getModelByQuery({},{},opt, callback);
 };*/
  
 
-CommonDao.prototype.delete = function (query, callback){
+MongooseDao.prototype.delete = function (query, callback){
     this.model.remove(query, function(error){
         if(error) return callback(error);
  
@@ -59,7 +60,7 @@ CommonDao.prototype.delete = function (query, callback){
     });
 };
  
-CommonDao.prototype.update = function( conditions, update ,options, callback) {
+MongooseDao.prototype.update = function( conditions, update ,options, callback) {
     this.model.update(conditions, update, options, function (error) {
         if(error) return callback(error);
  
@@ -67,4 +68,4 @@ CommonDao.prototype.update = function( conditions, update ,options, callback) {
     });
 };
  
-module.exports = CommonDao;
+module.exports = MongooseDao;
