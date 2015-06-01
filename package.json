@@ -1,7 +1,7 @@
 {
   "name": "mongoosedao",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "mongoose dao",
   "main": "index.js",
   "scripts": {
     "start":"npm publish .",
