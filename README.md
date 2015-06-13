@@ -26,6 +26,12 @@ Meeting.delete({"username":"sss","password":"password"},function(err, user){
 });
 ```
 
+## API
+
+- query = find
+- one   = fineOne
+- all   = find({})
+
 ## Contributing
 
 1. Fork it
