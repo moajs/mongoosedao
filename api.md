@@ -25,12 +25,25 @@
 
     });
     
-## getAll
+## getAll = all
 
     Meeting.getAll(function(err, users){
       
     });
     
+    
+equal
+    
+    Meeting.all(function(err, users){
+      
+    });
+    
+equal
+
+    Meeting.query({}, function(err, users){
+      
+    });
+
 ## one
 
     Meeting.one({"username":"sss","password":"password"},function(err, user){
@@ -38,6 +51,11 @@
         console.dir(err);
       }
     });
-## query
+## query = getByQuery
 
 ## all
+
+## updateById
+
+
+## update

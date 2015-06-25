@@ -26,11 +26,28 @@ Meeting.delete({"username":"sss","password":"password"},function(err, user){
 });
 ```
 
-## API
+## API and Test
 
-- query = find
-- one   = fineOne
-- all   = find({})
+
+Test status
+
+- [x] create
+- [x] delete
+- [x] deleteAll
+- [ ] deleteById
+- [x] getById
+- [x] getAll = all
+- [x] all   = find({})
+- [ ] query = getByQuery = find
+- [x] one   = fineOne
+- [ ] update
+- [ ] updateById
+- [ ] page(todo)
+
+
+
+
+more see [api doc](api.md)
 
 ## Contributing
 
