@@ -71,6 +71,5 @@ describe('MongooseDao', function(){
     
     //
     
-    
   })
 })
