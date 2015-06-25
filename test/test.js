@@ -70,6 +70,17 @@ describe('MongooseDao', function(){
     })
     
     //
+    it('should return ok when record getAll', function(done){
+      Meeting.getAll(function(err, users){
+        if(err){
+          console.dir(err);
+        }
+        
+        // console.dir(users);
+        assert.equal(users.length > 0, true);
+        done();
+      });
+    })
     
   })
 })

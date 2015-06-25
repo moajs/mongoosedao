@@ -4,7 +4,7 @@ var watch = require('gulp-watch');
 var path = 'test/**/*.js';
 
 gulp.task('watch', function() {
-  gulp.watch('test/**/*.js', ['mocha']);
+  gulp.watch(['test/**/*.js', '../lib/*.js'], ['mocha']);
 });
 
 var mocha = require('gulp-mocha');

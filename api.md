@@ -1,25 +1,43 @@
 # API
 
+## create
+
+    Meeting.create({"username":"sss","password":"password"},function(err, user){
+      
+    });
+
 ## delete
 
     Meeting.delete({"username":"fixture-user"},function(err){
-      assert.equal(err, null);
-      done();
+
     });
 
 
 ## deleteAll
 
     Meeting.deleteAll(function(err){
-      if(err){
-        console.log(err);
-      }
-    });
 
+    });
 
 ## getById
 
     Meeting.getById(user._id, function(err, new_user){
-      assert.equal(new_user.username, 'sss');
-      done();
+
     });
+    
+## getAll
+
+    Meeting.getAll(function(err, users){
+      
+    });
+    
+## one
+
+    Meeting.one({"username":"sss","password":"password"},function(err, user){
+      if(err){
+        console.dir(err);
+      }
+    });
+## query
+
+## all
