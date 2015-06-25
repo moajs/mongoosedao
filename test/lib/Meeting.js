@@ -41,7 +41,7 @@ UserSchema.statics.delete_by_name = function(name, cb_succ, cb_fail) {};
 
 var UserModel = mongoose.model('UserModel', UserSchema);
 
-var MongooseDao = require('../');
+var MongooseDao = require('../../');
 
  
 var MeetingDao = new MongooseDao(UserModel);
