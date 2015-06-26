@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "npm publish .",
-    "test": "./node_modules/.bin/gulp"
+    "test": "./node_modules/.bin/gulp",
+    "cov":"./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -23,9 +24,11 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "^2.3.0",
+    "coveralls": "^2.11.2",
     "gulp": "^3.9.0",
     "gulp-mocha": "^2.1.2",
     "gulp-watch": "^4.2.4",
+    "istanbul": "^0.3.16",
     "mocha": "^2.2.5",
     "mongoose": "^4.0.4"
   }
