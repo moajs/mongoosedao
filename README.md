@@ -4,6 +4,9 @@ mongoosedao = mongoose data access object
 
 [![gitter][gitter-image]][gitter-url]
 [![NPM version][npm-image]][npm-url]
+[![Build Status](https://travis-ci.org/moajs/mongoosedao.png?branch=master)](https://travis-ci.org/moajs/mongoosedao)
+[![Dependencies Status](https://david-dm.org/moajs/mongoosedao.png)](https://david-dm.org/moajs/mongoosedao)
+[![Coverage Status](https://coveralls.io/repos/moajs/mongoosedao/badge.png)](https://coveralls.io/r/moajs/mongoosedao)
 
 ## Install
 
