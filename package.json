@@ -1,6 +1,6 @@
 {
   "name": "mongoosedao",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "mongoose dao",
   "main": "index.js",
   "scripts": {
@@ -12,12 +12,12 @@
     "url": "git://github.com/i5ting/mongoosedao.git"
   },
   "keywords": [
-    "restful-router",
-    "restful",
-    "urlrouter",
-    "router",
-    "mapping",
-    "route"
+    "db",
+    "mongoose",
+    "dao",
+    "orm",
+    "mongodb",
+    "mongo"
   ],
   "author": "i5ting <shiren1118@126.com>",
   "license": "MIT",
