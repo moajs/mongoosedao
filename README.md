@@ -8,6 +8,7 @@ mongoosedao = mongoose data access object
 [![Dependencies Status](https://david-dm.org/moajs/mongoosedao.png)](https://david-dm.org/moajs/mongoosedao)
 [![Coverage Status](https://coveralls.io/repos/moajs/mongoosedao/badge.png)](https://coveralls.io/r/moajs/mongoosedao)
 
+
 ## Install
 
     npm install --save mongoosedao
