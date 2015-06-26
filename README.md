@@ -58,6 +58,7 @@ more see [api doc](api.md)
 
 ## 版本历史
 
+- v1.0.8 add mocha test && api.md
 - v1.0.5 add query with condition
 - v1.0.4 create with saved_doc return;
 - v1.0.3 add updateById
