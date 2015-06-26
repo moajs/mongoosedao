@@ -19,13 +19,13 @@ mongoosedao = mongoose data access object
 ```
 require('./db');
 
-var Meeting = require('./Meeting');
+var User = require('./User');
 
-Meeting.create({"username":"sss","password":"password"},function(err, user){
+User.create({"username":"sss","password":"password"},function(err, user){
   console.log(user);
 });
 
-Meeting.delete({"username":"sss","password":"password"},function(err, user){
+User.delete({"username":"sss","password":"password"},function(err, user){
   console.log(user);
 });
 ```
