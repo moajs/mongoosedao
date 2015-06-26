@@ -109,6 +109,19 @@ describe('MongooseDao', function(){
       });
     })
     
+    
+    it('should return ok when record query', function(done){
+      Meeting.query({}, function(err, users){
+        if(err){
+          console.dir(err);
+        }
+        
+        // console.dir(users);
+        assert.equal(users.length > 0, true);
+        done();
+      });
+    })
+    
     it('should return ok when record updateById', function(done){
       Meeting.one({"username":"sss","password":"password"},function(err, user){
         if(err){
@@ -169,6 +182,30 @@ describe('MongooseDao', function(){
           Meeting.update({'_id': new_user._id}, {
             username: 'updated_user3'
           }, {multi: false}, function(err2, result){
+            // console.dir(err2)
+            // console.dir(result)
+
+            assert.equal(result.ok, 1);
+            assert.equal(result.nModified, 1);
+            assert.equal(result.n, 1);
+            
+            done();
+          });
+          
+        });
+      });
+    })
+    
+    it('should return ok when record updateOne', function(done){
+      Meeting.one({"password":"password"}, function(err, user){
+        if(err){
+          console.dir(err);
+          done(err);
+        }
+        Meeting.getById(user._id, function(err, new_user){
+          Meeting.updateOne({'_id': new_user._id}, {
+            username: 'updated_user4'
+          }, function(err2, result){
             // console.dir(err2)
             // console.dir(result)
 

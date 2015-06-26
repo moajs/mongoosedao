@@ -44,7 +44,7 @@ equal
       
     });
 
-## one
+## one = findOne
 
     Meeting.one({"username":"sss","password":"password"},function(err, user){
       if(err){
@@ -53,7 +53,26 @@ equal
     });
 ## query = getByQuery
 
-## all
+    Meeting.query({}, function(err, users){
+      if(err){
+        console.dir(err);
+      }
+      
+      // console.dir(users);
+      assert.equal(users.length > 0, true);
+      done();
+    });
+## all = getAll = find({})
+
+    Meeting.all(function(err, users){
+      if(err){
+        console.dir(err);
+      }
+      
+      // console.dir(users);
+      assert.equal(users.length > 0, true);
+      done();
+    });
 
 ## updateById
 
@@ -68,6 +87,21 @@ equal
       
         done();
       });
+
+## updateOne
+
+      Meeting.updateOne({_id:new_user._id}, {
+        username: 'updated_user'
+      }, function(err, result){
+        console.dir(result)
+
+        assert.equal(result.ok, 1);
+        assert.equal(result.nModified, 1);
+        assert.equal(result.n, 1);
+      
+        done();
+      });
+
 
 ## update
 

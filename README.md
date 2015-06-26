@@ -38,9 +38,10 @@ Test status
 - [x] getById
 - [x] all         = getAll = find({})
 - [x] query       = getByQuery = find
-- [x] one         = fineOne
+- [x] one         = findOne
 - [x] update
-- [x] updateById  = updateOne
+- [x] updateOne
+- [x] updateById
 - [ ] page(todo)
 
 
