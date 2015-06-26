@@ -1,6 +1,6 @@
 {
   "name": "mongoosedao",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "mongoose dao",
   "main": "index.js",
   "scripts": {
