@@ -32,19 +32,16 @@ Meeting.delete({"username":"sss","password":"password"},function(err, user){
 Test status
 
 - [x] create
-- [x] delete
-- [x] deleteAll
-- [ ] deleteById
+- [x] delete      = remove
+- [x] deleteAll   = removeAll
+- [x] deleteById  = removeById
 - [x] getById
-- [x] getAll = all
-- [x] all   = find({})
-- [ ] query = getByQuery = find
-- [x] one   = fineOne
-- [ ] update
-- [ ] updateById
+- [x] all         = getAll = find({})
+- [x] query       = getByQuery = find
+- [x] one         = fineOne
+- [x] update
+- [x] updateById  = updateOne
 - [ ] page(todo)
-
-
 
 
 more see [api doc](api.md)

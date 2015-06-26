@@ -57,5 +57,46 @@ equal
 
 ## updateById
 
+      Meeting.updateById(new_user._id, {
+        username: 'updated_user'
+      }, function(err, result){
+        console.dir(result)
+
+        assert.equal(result.ok, 1);
+        assert.equal(result.nModified, 1);
+        assert.equal(result.n, 1);
+      
+        done();
+      });
 
 ## update
+
+way 1: 3 params
+
+      Meeting.update({'_id': new_user._id}, {
+        username: 'updated_user2'
+      }, function(err2, result){
+        console.dir(err2)
+        console.dir(result)
+
+        assert.equal(result.ok, 1);
+        assert.equal(result.nModified, 1);
+        assert.equal(result.n, 1);
+        
+        done();
+      });
+      
+way 2: 4 params
+
+      Meeting.update({'_id': new_user._id}, {
+        username: 'updated_user3'
+      }, {multi: false}, function(err2, result){
+        console.dir(err2)
+        console.dir(result)
+
+        assert.equal(result.ok, 1);
+        assert.equal(result.nModified, 1);
+        assert.equal(result.n, 1);
+        
+        done();
+      });
