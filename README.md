@@ -46,8 +46,8 @@ Test status
 - [x] update
 - [x] updateOne
 - [x] updateById
-- [ ] page(todo)
-- [ ] top(num) && first(num) = n(num)
+- [ ] pageByLastId(todo)
+- [x] top(num) && first(num) = n(num)
 
 
 more see [api doc](api.md)
