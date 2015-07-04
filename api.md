@@ -134,3 +134,44 @@ way 2: 4 params
         
         done();
       });
+      
+## pagination
+
+### top = first = n
+
+获取指定前20条数
+
+      Top.top(function(err, tops){
+        if(err){
+          console.dir(err);
+        }
+        
+        // console.dir(tops.length);
+        assert.equal(tops.length == 20, true);
+        done();
+      });
+      
+获取指定前xx条数
+  
+      Top.top(30 ,function(err, tops){
+        if(err){
+          console.dir(err);
+        }
+        
+        // console.dir(tops.length);
+        assert.equal(tops.length == 30, true);
+        done();
+      });
+      
+更改pagesize
+
+      Top.pagesize = 25;
+      Top.top(function(err, tops){
+        if(err){
+          console.dir(err);
+        }
+        
+        // console.dir(tops.length);
+        assert.equal(tops.length == 25, true);
+        done();
+      });

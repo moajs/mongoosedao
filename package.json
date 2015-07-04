@@ -7,7 +7,7 @@
     "start": "npm publish .",
     "test": "./node_modules/.bin/gulp",
     "mocha": "./node_modules/.bin/mocha -u bdd",
-    "cov":"./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+    "cov": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
   "author": "i5ting <shiren1118@126.com>",
   "license": "MIT",
   "devDependencies": {
+    "bluebird": "^2.9.32",
     "chai": "^2.3.0",
     "coveralls": "^2.11.2",
     "gulp": "^3.9.0",
