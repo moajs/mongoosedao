@@ -137,7 +137,7 @@ way 2: 4 params
       
 ## pagination
 
-### top = first = n
+### latest = top = first = n
 
 获取指定前20条数
 
@@ -175,3 +175,27 @@ way 2: 4 params
         assert.equal(tops.length == 25, true);
         done();
       });
+      
+### pageByLastId
+
+根据id直接返回，长度看Top.pagesize 
+
+    Top.pageByLastId(one._id, function(err, new_tops){
+      
+根据id直接返回，长度看第二个参数，下面的例子是50
+
+    Top.pageByLastId(one._id, 50, function(err, new_tops){
+      
+根据id直接返回，长度看第二个参数，下面的例子是50，带有排序条件，created_at是升序
+
+    Top.pageByLastId(one._id, 100, {created_at:'asc'}, function(err, new_tops){
+
+## count
+
+查询全部总数
+
+    User.count(cb)
+
+按条件查询总数
+
+    User.count({},cb)

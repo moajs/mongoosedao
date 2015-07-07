@@ -32,7 +32,6 @@ User.delete({"username":"sss","password":"password"},function(err, user){
 
 ## API and Test
 
-
 Test status
 
 - [x] create
@@ -46,8 +45,9 @@ Test status
 - [x] update
 - [x] updateOne
 - [x] updateById
-- [ ] pageByLastId(todo)
-- [x] top(num) && first(num) = n(num)
+- [x] pageByLastId
+- [x] top(num) && first(num) = n(num) = latest(num)
+- [x] count(cb) &* count({},cb)
 
 
 more see [api doc](api.md)
