@@ -30,6 +30,98 @@ User.delete({"username":"sss","password":"password"},function(err, user){
 });
 ```
 
+## 扩展
+
+User.model is a mongoose model. You can do all as mongoose model。
+
+more features
+
+- statics
+- methods
+- pre or post hook
+- aggregation
+
+比如直接扩展方法
+
+```
+User.model.find().skip(pagesize*(n-1)).limit(pagesize)
+
+User.model.find({'_id' :{
+   "$gt" :ObjectId("55940ae59c39572851075bfd")} 
+ }).limit(20).sort({_id:-1})
+
+User.model.statics.find_by_openid = function(openid, cb) {
+  return this.findOne({
+    openid: openid
+  }, cb);
+};
+
+User.model.methods.is_exist = function(cb) {
+  var query;
+  query = {
+    username: this.username,
+    password: this.password
+  };
+  return this.model('UserModel').findOne(query, cb);
+};
+```
+
+当然我们更推荐的是在model定义上直接加
+
+```
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+
+ 
+UserSchema = new Schema({
+  username: {
+    type: String,
+    required: true,
+    index: {
+      unique: true
+    }
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  avatar: String,
+  address: String,
+  created_at: {
+    type: Date,
+    "default": Date.now
+  }
+});
+
+UserSchema.methods.find_by_name = function(cb) {
+  return this.model('UserModel').find({
+    username: this.username
+  }, cb);
+};
+
+UserSchema.methods.is_exist = function(cb) {
+  var query;
+  query = {
+    username: this.username,
+    password: this.password
+  };
+  return this.model('UserModel').findOne(query, cb);
+};
+
+UserSchema.statics.delete_by_name = function(name, cb_succ, cb_fail) {};
+
+var UserModel = mongoose.model('UserModel', UserSchema);
+
+var MongooseDao = require('../../');
+
+ 
+var MeetingDao = new MongooseDao(UserModel);
+ 
+module.exports = MeetingDao;
+```
+
+只要mongoose支持的，使用mongoosedao都可以完成，甚至更好
+
 ## API and Test
 
 Test status
