@@ -163,6 +163,18 @@ way 2: 4 params
         done();
       });
       
+根据查询条件获取指定前xx条数
+  
+      Top.top(30, {}, function(err, tops){
+        if(err){
+          console.dir(err);
+        }
+        
+        // console.dir(tops.length);
+        assert.equal(tops.length == 30, true);
+        done();
+      });
+      
 更改pagesize
 
       Top.pagesize = 25;
