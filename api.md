@@ -197,10 +197,14 @@ way 2: 4 params
 根据id直接返回，长度看第二个参数，下面的例子是50
 
     Top.pageByLastId(one._id, 50, function(err, new_tops){
+
+根据id直接返回，长度看第二个参数，下面的例子是50，不带带有排序条件
+
+    Top.pageByLastId(one._id, 100, {"username" : "fixture-user-41"}, function(err, new_tops){
       
 根据id直接返回，长度看第二个参数，下面的例子是50，带有排序条件，created_at是升序
 
-    Top.pageByLastId(one._id, 100, {created_at:'asc'}, function(err, new_tops){
+    Top.pageByLastId(one._id, 100, {"username" : "fixture-user-41"}, {created_at:'asc'}, function(err, new_tops){
 
 ## count
 
