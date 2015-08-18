@@ -44,26 +44,27 @@ more features
 比如直接扩展方法
 
 ```
-User.model.find().skip(pagesize*(n-1)).limit(pagesize)
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var Promise = require('bluebird');
 
-User.model.find({'_id' :{
-   "$gt" :ObjectId("55940ae59c39572851075bfd")} 
- }).limit(20).sort({_id:-1})
+var User = require('../app/models/user');
 
-User.model.statics.find_by_openid = function(openid, cb) {
-  return this.findOne({
-    openid: openid
-  }, cb);
+User.schema.statics.find_by_openid = function(openid, cb) {
+  console.log('find_by_openid...')
 };
 
-User.model.methods.is_exist = function(cb) {
-  var query;
-  query = {
-    username: this.username,
-    password: this.password
-  };
-  return this.model('UserModel').findOne(query, cb);
-};
+// 此处必须要重置一下model
+User = mongoose.model('User', User.schema);
+
+var MongooseDao       = require('mongoosedao');
+
+var UserDao = new MongooseDao(Test);
+
+UserDao.model.find_by_openid({}, function(err,docs){
+  // console.dir(docs);
+  process.exit();
+}); 
 ```
 
 当然我们更推荐的是在model定义上直接加
