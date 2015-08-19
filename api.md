@@ -175,6 +175,21 @@ way 2: 4 params
         done();
       });
       
+根据查询条件获取指定前xx条数,支持排序
+      
+      // sort by "field" ascending and "test" descending
+      var query = {};
+      var sort = {field: 'asc', test: -1 }；
+      Top.top(30, query, sort , function(err, tops){
+        if(err){
+          console.dir(err);
+        }
+        
+        // console.dir(tops.length);
+        assert.equal(tops.length == 30, true);
+        done();
+      });
+      
 更改pagesize
 
       Top.pagesize = 25;
