@@ -10,7 +10,7 @@ TopSchema = new Schema({
   }
 });
 
-var TopModel = mongoose.model('TopModel', TopSchema);
+var TopModel = mongoose.model('TopModel2', TopSchema);
 
 var MongooseDao = require('../../');
 
