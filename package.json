@@ -9,6 +9,9 @@
     "mocha": "./node_modules/.bin/mocha -u bdd",
     "cov": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
+  "publishConfig": {
+    "tag": "next"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/i5ting/mongoosedao.git"
