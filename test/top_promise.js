@@ -6,7 +6,7 @@ var Promise = require("bluebird");
 
 require('./lib/db');
 
-var Top = require('./lib/Top');
+var Top = require('./lib/Top2');
  
 describe('MongooseDao', function(){
 	before(function(done) {
@@ -38,7 +38,7 @@ describe('MongooseDao', function(){
     // runs after each test in this block
   })
   
-  // console.log(      Top)
+  // console.dir(      Top)
   // console.log(      Top.model)
 	
   describe('Top with Promise', function(){
@@ -59,7 +59,7 @@ describe('MongooseDao', function(){
     it('should return ok when Top.createAsync() and result top to then ', function(done){
       Top.createAsync({username: "alfred"}).then(function(top){
         
-        console.log(top)
+        // console.log(top)
         assert.equal(top.username, "alfred");
         done();
       })
@@ -70,8 +70,8 @@ describe('MongooseDao', function(){
     it('should return ok when Top.createAsync() and result top to then ', function(done){
       Top.allAsync().then(function(tops){
         
-        console.log(tops)
-        assert.equal(tops.length > 0, true);
+        // console.log(tops)
+        assert.equal(tops.length > 1, true);
         done();
       })
     })
