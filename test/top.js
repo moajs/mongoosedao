@@ -169,30 +169,30 @@ describe('MongooseDao', function(){
     })
     
     
-    it('should return Top.pageByLastId(_id,50,sort).length == 50 when Top.pageByLastId(_id,5,{},{created_at:desc})', function(done){
-      Top.pagesize = 20;
-      Top.top(30, function(err, tops){
-        if(err){
-          console.dir(err);
-        }
-        var one = tops[0];
-        
-        Top.pageByLastId(one._id, 100, {},{created_at:'asc'}, function(err, new_tops){
-          // console.dir(new_tops.length);
-          var first = new_tops[0];
-          // console.dir(first)
-          Top.pageByLastId(one._id, 100, {}, {created_at:'desc'}, function(err, new_tops2){
-            // console.dir(new_tops2.length);
-            var last = new_tops2[new_tops.length - 1];
-            
-            // console.dir(last)
-            assert.equal(first.username == last.username, true);
-            done();
-          });
-        });
-      });
-    })
-    
+    // it('should return Top.pageByLastId(_id,50,sort).length == 50 when Top.pageByLastId(_id,5,{},{created_at:desc})', function(done){
+ //      Top.pagesize = 20;
+ //      Top.top(30, function(err, tops){
+ //        if(err){
+ //          console.dir(err);
+ //        }
+ //        var one = tops[0];
+ //
+ //        Top.pageByLastId(one._id, 100, {},{created_at:'asc'}, function(err, new_tops){
+ //          // console.dir(new_tops.length);
+ //          var first = new_tops[0];
+ //          // console.dir(first)
+ //          Top.pageByLastId(one._id, 100, {}, {created_at:'desc'}, function(err, new_tops2){
+ //            // console.dir(new_tops2.length);
+ //            var last = new_tops2[new_tops.length - 1];
+ //
+ //            // console.dir(last)
+ //            assert.equal(first.username == last.username, true);
+ //            done();
+ //          });
+ //        });
+ //      });
+ //    })
+ //
     
   })
 })
