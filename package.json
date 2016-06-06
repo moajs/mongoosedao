@@ -24,7 +24,6 @@
   "author": "i5ting <shiren1118@126.com>",
   "license": "MIT",
   "devDependencies": {
-    "bluebird": "^2.9.32",
     "chai": "^2.3.0",
     "coveralls": "^2.11.2",
     "gulp": "^3.9.0",
@@ -33,5 +32,8 @@
     "istanbul": "^0.3.16",
     "mocha": "^2.2.5",
     "mongoose": "^4.0.4"
+  },
+  "dependencies": {
+    "bluebird": "^3.4.0"
   }
 }
