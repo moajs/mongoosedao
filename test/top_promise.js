@@ -66,5 +66,14 @@ describe('MongooseDao', function(){
     })
   })
   
-  
+  describe('#allAsync', function(){
+    it('should return ok when Top.createAsync() and result top to then ', function(done){
+      Top.allAsync().then(function(tops){
+        
+        console.log(tops)
+        assert.equal(tops.length > 0, true);
+        done();
+      })
+    })
+  })
 })
