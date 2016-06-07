@@ -51,7 +51,9 @@ equal
         console.dir(err);
       }
     });
-## query = getByQuery
+## query = find = getByQuery
+
+直接查询
 
     Meeting.query({}, function(err, users){
       if(err){
@@ -62,6 +64,28 @@ equal
       assert.equal(users.length > 0, true);
       done();
     });
+    
+关联其他表简单版本
+  
+   LessionDao.query({}, 'student')
+
+关联其他表复杂版本
+
+    Meeting.query({}, {
+        path: 'owner'
+      , select: 'name'
+      , match: { color: 'black' }
+      , options: { sort: { name: -1 }}
+    }, function(err, users){
+      if(err){
+        console.dir(err);
+      }
+      
+      // console.dir(users);
+      assert.equal(users.length > 0, true);
+      done();
+    });
+
 ## all = getAll = find({})
 
     Meeting.all(function(err, users){

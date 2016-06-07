@@ -32,6 +32,7 @@ db = mongoose.connection;
 db.on('error', console.error.bind(console, 'mongoose connection error:'));
 
 db.once('open', function() {
+  // mongoose.connection.db.dropDatabase();
   return console.log('mongoose open success');
 });
 

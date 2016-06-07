@@ -33,10 +33,12 @@
     "gulp-mocha": "^2.1.2",
     "gulp-watch": "^4.2.4",
     "istanbul": "^0.3.16",
+    "log1": "^1.0.7",
     "mocha": "^2.2.5",
     "mongoose": "^4.0.4"
   },
   "dependencies": {
-    "bluebird": "^3.4.0"
+    "bluebird": "^3.4.0",
+    "debug": "^2.2.0"
   }
 }
