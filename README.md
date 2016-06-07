@@ -13,6 +13,7 @@ mongoosedao = mongoose data access object
 - crud、分页等实用方法
 - 静态方法，便于代码生成
 - 内置bluebird，对model和dao都进行了promisify
+- 支持co和async/wait
 
 ## Install
 
