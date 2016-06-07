@@ -8,6 +8,11 @@ mongoosedao = mongoose data access object
 [![Dependencies Status](https://david-dm.org/moajs/mongoosedao.png)](https://david-dm.org/moajs/mongoosedao)
 [![Coverage Status](https://coveralls.io/repos/moajs/mongoosedao/badge.png)](https://coveralls.io/r/moajs/mongoosedao)
 
+## Features
+
+- crud、分页等实用方法
+- 静态方法，便于代码生成
+- 内置bluebird，对model和dao都进行了promisify
 
 ## Install
 
@@ -28,6 +33,14 @@ User.create({"username":"sss","password":"password"},function(err, user){
 User.delete({"username":"sss","password":"password"},function(err, user){
   console.log(user);
 });
+```
+
+## DEBUG
+
+use tj/debug module for debug
+
+```
+DEBUG=dao 
 ```
 
 ## 扩展
@@ -133,7 +146,7 @@ Test status
 - [x] deleteById  = removeById
 - [x] getById
 - [x] all         = getAll = find({})
-- [x] query       = getByQuery = find
+- [x] query       = getByQuery = find （support 2 ways: (query, cb) && (query, populate, cb)）
 - [x] one         = findOne
 - [x] update
 - [x] updateOne
